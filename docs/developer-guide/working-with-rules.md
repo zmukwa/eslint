@@ -369,6 +369,8 @@ var comments = sourceCode.getComments(node);
 
 Keep in mind that comments are technically not a part of the AST and are only attached to it on demand, i.e. when you call `getComments()`.
 
+Shebangs are not included in the results of `getComments()`. Use `sourceCode.getTokenOrCommentBefore()` or `source.getAllComments()` if you need to access the shebang comment token.
+
 **Note:** One of the libraries adds AST node properties for comments - do not use these properties. Always use `sourceCode.getComments()` as this is the only guaranteed API for accessing comments (we will likely change how comments are handled later).
 
 ### Accessing Code Paths
