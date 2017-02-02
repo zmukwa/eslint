@@ -361,7 +361,7 @@ In this way, you can look for patterns in the JavaScript text itself when the AS
 
 While comments are not technically part of the AST, ESLint provides a few ways for rules to access them:
 
-#### sourceCode.getAllComments(node)
+#### sourceCode.getAllComments()
 
 This method returns an array of all the comments found in the program. This is useful for rules that need to check all comments regardless of location.
 
