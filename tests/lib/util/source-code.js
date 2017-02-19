@@ -175,7 +175,8 @@ describe("SourceCode", () => {
             it("should not has BOM in `text` property.", () => {
                 assert.equal(
                     sourceCode.text,
-                    "\"use strict\";\n\nconsole.log(\"This file has [0xEF, 0xBB, 0xBF] as BOM.\");\n");
+                    "\"use strict\";\n\nconsole.log(\"This file has [0xEF, 0xBB, 0xBF] as BOM.\");\n"
+                );
             });
         });
     });
@@ -1158,9 +1159,7 @@ describe("SourceCode", () => {
                     sourceCode = new SourceCode(code, ast);
 
                 assert.equal(
-                    sourceCode.isSpaceBetweenTokens(
-                        sourceCode.ast.tokens[0], sourceCode.ast.tokens[1]
-                    ),
+                    sourceCode.isSpaceBetweenTokens(sourceCode.ast.tokens[0], sourceCode.ast.tokens[1]),
                     expected
                 );
             });

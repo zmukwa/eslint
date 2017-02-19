@@ -1202,9 +1202,10 @@ describe("eslint", () => {
             };
 
             eslint.reset();
-            eslint.defineRule("test-rule", sandbox.mock().withArgs(
-                sinon.match({ parserOptions })
-            ).returns({}));
+            eslint.defineRule(
+                "test-rule",
+                sandbox.mock().withArgs(sinon.match({ parserOptions })).returns({})
+            );
 
             const config = { rules: { "test-rule": 2 }, parserOptions };
 
@@ -1216,9 +1217,10 @@ describe("eslint", () => {
             const parserOptions = {};
 
             eslint.reset();
-            eslint.defineRule("test-rule", sandbox.mock().withArgs(
-                sinon.match({ parserOptions })
-            ).returns({}));
+            eslint.defineRule(
+                "test-rule",
+                sandbox.mock().withArgs(sinon.match({ parserOptions })).returns({})
+            );
 
             const config = { rules: { "test-rule": 2 } };
 
@@ -1236,9 +1238,10 @@ describe("eslint", () => {
                 const alternateParser = "esprima-fb";
 
                 eslint.reset();
-                eslint.defineRule("test-rule", sandbox.mock().withArgs(
-                    sinon.match({ parserPath: alternateParser })
-                ).returns({}));
+                eslint.defineRule(
+                    "test-rule",
+                    sandbox.mock().withArgs(sinon.match({ parserPath: alternateParser })).returns({})
+                );
 
                 const config = { rules: { "test-rule": 2 }, parser: alternateParser };
 
@@ -1284,9 +1287,10 @@ describe("eslint", () => {
             const DEFAULT_PARSER = eslint.defaults().parser;
 
             eslint.reset();
-            eslint.defineRule("test-rule", sandbox.mock().withArgs(
-                sinon.match({ parserPath: DEFAULT_PARSER })
-            ).returns({}));
+            eslint.defineRule(
+                "test-rule",
+                sandbox.mock().withArgs(sinon.match({ parserPath: DEFAULT_PARSER })).returns({})
+            );
 
             const config = { rules: { "test-rule": 2 } };
 
@@ -2893,8 +2897,7 @@ describe("eslint", () => {
             assert.equal(messages[0].ruleId, "no-alert");
         });
 
-        it("should report a violation for global variable declarations",
-        () => {
+        it("should report a violation for global variable declarations", () => {
             const code = [
                 "/* global foo */"
             ].join("\n");

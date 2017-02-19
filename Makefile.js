@@ -863,7 +863,8 @@ target.checkLicenses = function() {
 
         if (impermissible.length) {
             impermissible.forEach(dependency => {
-                console.error("%s license for %s is impermissible.",
+                console.error(
+                    "%s license for %s is impermissible.",
                     dependency.licenses,
                     dependency.name
                 );
@@ -1081,11 +1082,9 @@ target.perf = function() {
             () => {
 
                 // Count test target files.
-                const count = glob.sync(
-                    process.platform === "win32"
-                        ? PERF_MULTIFILES_TARGETS.slice(2).replace("\\", "/")
-                        : PERF_MULTIFILES_TARGETS
-                ).length;
+                const count = glob.sync(process.platform === "win32"
+                    ? PERF_MULTIFILES_TARGETS.slice(2).replace("\\", "/")
+                    : PERF_MULTIFILES_TARGETS).length;
 
                 runPerformanceTest(
                     `Multi Files (${count} files):`,

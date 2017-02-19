@@ -23,9 +23,7 @@ const assert = require("assert"),
 //------------------------------------------------------------------------------
 
 describe("NodeEventGenerator", () => {
-    EventGeneratorTester.testEventGeneratorInterface(
-        new CommentEventGenerator(new NodeEventGenerator(new EventEmitter()))
-    );
+    EventGeneratorTester.testEventGeneratorInterface(new CommentEventGenerator(new NodeEventGenerator(new EventEmitter())));
 
     it("should generate comment events without duplicate.", () => {
         const emitter = new EventEmitter();

@@ -58,9 +58,7 @@ describe("CodePathAnalyzer", () => {
         eslint.reset();
     });
 
-    EventGeneratorTester.testEventGeneratorInterface(
-        new CodePathAnalyzer(new NodeEventGenerator(new EventEmitter()))
-    );
+    EventGeneratorTester.testEventGeneratorInterface(new CodePathAnalyzer(new NodeEventGenerator(new EventEmitter())));
 
     describe("interface of code paths", () => {
         let actual = [];

@@ -2278,9 +2278,7 @@ ruleTester.run("indent", rule, {
             "          .bar\n" +
             "}",
             options: [4, { MemberExpression: 1 }],
-            errors: expectedErrors(
-                [3, 8, 10, "Punctuator"]
-            )
+            errors: expectedErrors([3, 8, 10, "Punctuator"])
         },
         {
             code:
@@ -2289,9 +2287,7 @@ ruleTester.run("indent", rule, {
             "             .bar\n" +
             "}",
             options: [4, { MemberExpression: 2 }],
-            errors: expectedErrors(
-                [3, 12, 13, "Punctuator"]
-            )
+            errors: expectedErrors([3, 12, 13, "Punctuator"])
         },
         {
             code:
@@ -2301,9 +2297,7 @@ ruleTester.run("indent", rule, {
             "}",
             options: [4, { MemberExpression: 2 }],
             parserOptions: { ecmaVersion: 6 },
-            errors: expectedErrors(
-                [3, 12, 13, "Punctuator"]
-            )
+            errors: expectedErrors([3, 12, 13, "Punctuator"])
         },
         {
             code:
@@ -2315,11 +2309,7 @@ ruleTester.run("indent", rule, {
             "};",
             options: [2, { MemberExpression: 1 }],
             parserOptions: { ecmaVersion: 6 },
-            errors: expectedErrors(
-                [
-                    [3, 4, 6, "Punctuator"]
-                ]
-            )
+            errors: expectedErrors([3, 4, 6, "Punctuator"])
         },
         {
             code:
