@@ -138,4 +138,34 @@ describe("RuleFixer", () => {
 
     });
 
+    describe("keep", () => {
+
+        it("should return an object with the correct information when called", () => {
+
+            const result = ruleFixer.keep({ range: [4, 7] });
+
+            assert.deepEqual(result, {
+                range: [4, 7],
+                text: null
+            });
+
+        });
+
+    });
+
+    describe("keepRange", () => {
+
+        it("should return an object with the correct information when called", () => {
+
+            const result = ruleFixer.keepRange([0, 7]);
+
+            assert.deepEqual(result, {
+                range: [0, 7],
+                text: null
+            });
+
+        });
+
+    });
+
 });
